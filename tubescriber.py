@@ -1,11 +1,10 @@
 # youtube_transcriber.py
 
 from youtube_transcript_api import YouTubeTranscriptApi
-from langchain_community.llms import Ollama
 
 class YouTubeTranscriber:
-    def __init__(self, model):
-        self.ollama = model
+    def __init__(self):
+        pass
 
     def fetch_youtube_transcript(self, video_id):
         try:
@@ -27,11 +26,3 @@ class YouTubeTranscriber:
             formatted_text = self.format_transcript(transcript)
             return formatted_text
         return None
-
-# Example usage (uncomment to run standalone)
-# if __name__ == "__main__":
-#     video_id = "YOUR_YOUTUBE_VIDEO_ID"
-#     ollama_api_key = "YOUR_OLLAMA_API_KEY"
-#     transcriber = YouTubeTranscriber(ollama_api_key)
-#     result = transcriber.transcribe(video_id)
-#     print(result)

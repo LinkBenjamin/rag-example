@@ -36,9 +36,6 @@ def main():
     if result:
         print("Transcription Successful.  Creating a Vector Store...")
         vector_store_retriever = make_vector_store_retriever(result)
-        
-        print("Vectore Store Retriever created.  Setting up Retrieval Chain...")
-        chain = create_retrieval_chain(combine_docs_chain=llm, retriever=vector_store_retriever)
 
         print("Combining docs...")
         retrieval_qa_chat_prompt = hub.pull("langchain-ai/retrieval-qa-chat")
