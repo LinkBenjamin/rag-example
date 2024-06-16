@@ -31,7 +31,7 @@ def main():
     video_id = VIDEO_ID
     llm = Ollama(model=MODEL_ID, base_url=BASE_URL)
     
-    result = transcribe(video_id, llm)
+    result = transcribe(video_id)
     
     if result:
         print("Transcription Successful.  Creating a Vector Store...")
@@ -52,8 +52,8 @@ def main():
     else:
         print("ERROR: Failed to transcribe the video.")
 
-def transcribe(video_id, model):
-    tx = YouTubeTranscriber(model)
+def transcribe(video_id):
+    tx = YouTubeTranscriber()
     return tx.transcribe(video_id)
 
 def make_vector_store_retriever(result):
