@@ -17,15 +17,15 @@ VIDEO_ID = 'B9-3duh8-TA'
 def invocations(retrieval_chain):
     response1 = retrieval_chain.invoke({"input": "Create a summary of this message that's less than 800 characters long.  Then add several hashtags that would be appropriate if this were the youtube description of the video, in order to maximize its social media reach."})
 
-    print(response1['answer'])
+    print(f"{response1['answer']}\n")
 
     response2 = retrieval_chain.invoke({"input": "Create a clickbait style title for the message based on its overall theme."})
 
-    print(response2['answer'])
+    print(f"{response2['answer']}\n")
 
     response3 = retrieval_chain.invoke({"input": "Locate at least 3 potential quotable snippets within the message that could make good short-form video content.  Provide ONLY the snippets, do not explain why you selected them."})
 
-    print(response3['answer'])
+    print(f"{response3['answer']}\n")
 
 def main():
     video_id = VIDEO_ID
